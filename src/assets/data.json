@@ -1,0 +1,59 @@
+[
+    {
+      "vehicleNumber": "MH01JB007",
+      "chasisNumber": "5GZCZ43D13S812715",
+      "ownerName": "James Bond",
+      "vehicleType": "Personal",
+      "registrationDate": "01/01/2005",
+      "isInssured": "Yes",
+      "inssuranceType": "Comprehensive Coverage",
+      "inssuranceEndDate": "12/30/2020",
+      "serviceLocation": "Mumbai",
+      "dealerName": "Navnit Motors",
+      "serviceDescription": "Oil Change",
+      "serviceDate": "10/10/2019",
+      "model": "BMW"
+    }, {
+      "vehicleNumber": "MH01JB001",
+      "chasisNumber": "4GZCZ43ZX3S810010",
+      "ownerName": "SRK",
+      "vehicleType": "Personal",
+      "registrationDate": "10/05/2006",
+      "isInssured": "Yes",
+      "inssuranceType": "Full Coverage",
+      "inssuranceEndDate": "05/28/2020",
+      "serviceLocation": "Mumbai",
+      "dealerName": "BMW Motors",
+      "serviceDescription": "Tyre Change",
+      "serviceDate": "20/11/2019",
+      "model": "BMW"
+    }, {
+      "vehicleNumber": "MH02JB007",
+      "chasisNumber": "6KZCZ43D53X810098",
+      "ownerName": "Sangam Mishra",
+      "vehicleType": "Personal",
+      "registrationDate": "10/05/2008",
+      "isInssured": "Yes",
+      "inssuranceType": "Full Coverage",
+      "inssuranceEndDate": "12/30/2020",
+      "serviceLocation": "Mumbai",
+      "dealerName": "Enigma Motors",
+      "serviceDescription": "Tyre Change",
+      "serviceDate": "10/15/2019",
+      "model": "Audi"
+    }, {
+      "vehicleNumber": "MH03JB007",
+      "chasisNumber": "8LMCZ43L11S810810",
+      "ownerName": "Ratan Tata",
+      "vehicleType": "Personal",
+      "registrationDate": "05/10/2010",
+      "isInssured": "Yes",
+      "inssuranceType": "Full Coverage",
+      "inssuranceEndDate": "12/15/2020",
+      "serviceLocation": "Mumbai",
+      "dealerName": "Hexa Motors",
+      "serviceDescription": "Oil Change",
+      "serviceDate": "10/20/2019",
+      "model": "Volvo"
+    }
+]

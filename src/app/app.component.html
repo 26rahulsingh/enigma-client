@@ -1,0 +1,330 @@
+<div class="bodyimage">
+  <div class="overlay"></div>
+  <div *ngIf="showFirstPage">
+    <div class="container">
+      <div class="col-md-12" style="padding-top: 12%">
+        <div>
+          <h3 class="card-primary no-margin" style="font-size: 48px;text-align: center;
+color: #0c00bd;">R-Carz Business Statement <span class="fa fa-map pull-right"></span>
+          </h3>
+          <div>
+            <p class="card-text"
+              style="font-size: 18px;font-weight: 300;letter-spacing: 0.5px;text-align: center;margin-bottom: 20px;">
+              Fintech backed by Consortium of car sales Aggregators.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-5 offset-sm-1">
+          <div class="card-block" style="max-height: 222px; overflow: hidden; position: relative; margin-top: 25px;">
+            <h4 class="card-title buyer-seller" (click)="goToBuyer()">
+              <span class="badge badge-secondary" style="font-weight: 300; letter-spacing: 2px; font-size: 30px; background: transparent">
+                Buyer
+              </span>
+            </h4>
+            <img class="card-img-top" src="../assets/buyer.jpeg" alt="car buyer" style=" height: auto; width: 100%;"/>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="card-block" style="max-height: 222px; overflow: hidden; position: relative; margin-top: 25px;">
+            <h4 class="card-title buyer-seller" (click)="goToSeller()">
+              <span class="badge badge-secondary" style="font-weight: 300; letter-spacing: 2px; font-size: 30px; background: transparent">
+                Seller
+              </span>
+            </h4>
+            <img class="card-img-top" src="../assets/seller.jpeg" alt="car seller" style=" height: auto; width: 100%;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="showBuyer">
+    <div class="row justify-content-center" style="padding-top: 20px;">
+      <!-- <div class="col-md-3">
+        <div class="card">
+          <h3 class="card-header text-white card-primary no-margin">Featured <span class="fa fa-map pull-right"></span></h3>
+          <div class="card-block">
+            <img class="card-img-top" src="http://www.placehold.it/370x200" alt="Card image cap" />
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-md-12">
+        <div class="card" style="box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); border: none; background: #eee;">
+          <div class="form-inline" style="padding-top: 15px">
+            <div class="col-md-12 form-group">
+              <h5><span class="badge">Dream Car: </span></h5>
+              <input type="text" class="form-control" name="name" (input)="carname=$event.target.value"
+                placeholder="Honda Amaze Diesel 10000 km..." style="width: 80%">
+            </div>
+          </div>
+          <br />
+          <div class="col-sm-6">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="radio" name="options" [(ngModel)]="itemsList.options" value="1">&nbsp;
+              </span>
+              <label>&nbsp;Brand new (less than 2 year old)</label>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="radio" name="options" [(ngModel)]="itemsList.options" value="2">&nbsp;
+              </span>
+              <label>&nbsp;Like new (between 2 to 5 year old)</label>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="radio" name="options" [(ngModel)]="itemsList.options" value="5">&nbsp;
+              </span>
+              <label>&nbsp;Excellent Condition (between 5 to 10 year old)</label>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="radio" name="options" [(ngModel)]="itemsList.options" value="10">&nbsp;
+              </span>
+              <label>&nbsp;Good Condition (between 10 to 15 year old)</label>
+            </div>
+          </div>
+          <div class="col-md-12" style="text-align: center; margin-bottom: 10px">
+            <button class="btn btn-success" (click)="getCarList()">Get my car</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div>
+      <button class="btn btn-success" (click)="purchasesCar()">Purchases Car</button>&nbsp;
+      <button class="btn btn-success" (click)="getFinance()">Get Finance</button>&nbsp;
+      <button class="btn btn-success" (click)="contactAgent()">contact Agent</button>
+    </div> -->
+  </div>
+
+  <div class="container" *ngIf="showSeller">
+    <div class="row justify-content-center" style="padding-top: 20px">
+      <div class="col-md-8">
+        <div class="card" style="box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    border: none;background: #fefefe;">
+          <div class="card-header" style="background: #051a4a;">
+            <h4 style="color: #fff;">Vehicle Information</h4>
+          </div>
+          <div class="form-inline" style="background: #eee">
+            <div class="col-md-12 form-group">
+              <h5><span class="badge">Vehicle Number</span></h5>
+              <input style="width: 50%" type="text" class="form-control" name="name" (input)="vnumber=$event.target.value"
+                placeholder="enter vehicle number">
+            </div><br /><br />
+            <div class="col-md-12 form-group">
+              <h5><span class="badge">Chasis Number </span></h5>
+              &nbsp;<input type="text" style="width: 50%" class="form-control" name="name"
+                (input)="cnumber=$event.target.value"
+                placeholder="enter chasis number">
+            </div>
+            <div class="col-md-12" style="display: flex; align-items: flex-start; padding-top: 10px">
+              <div class="col-sm-1" style="padding-left: 8px; padding-right: 0">
+                <input type="checkbox" aria-label="Checkbox for following text input">
+              </div>
+              <div class="col-sm-11" style="padding-left: 0px">
+                <p style="text-align: justify; position: relative; left: -18px; margin-bottom: 4px">
+                  By clicking on this, I provide my consent to the platform for pulling information about my car from
+                  the
+                  regulatory.
+                </p>
+                <ul style="padding-left: 10px">
+                  <li>RTA</li>
+                  <li>IRDA</li>
+                  <li>Private Car Service Providers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 form-group" style="text-align: center; background: #eeeeee; padding-top: 10px; padding-bottom: 20px; margin-bottom: 0">
+            <button class="btn btn-success" (click)="submitVehicleInfo()">Proceed</button>
+            <!-- <button class="btn btn-success" (click)="publishData()">Submit</button> -->
+          </div>
+          <div *ngIf="showValuation" style="padding-top: 20px; text-align: center; padding-bottom: 20px">
+            <img src="../assets/carvalue.jpeg" style="width: 28%;">
+            <h6 style="margin:10px">Your car valuation is ₹ 5,00,000.</h6>
+            <div class="col-md-12" style="display: flex; align-items: flex-start; padding-top: 10px">
+              <div class="col-sm-1" style="padding-left: 8px;">
+                <input type="checkbox" aria-label="Checkbox for following text input">
+              </div>
+              <div class="col-sm-11" style="padding-left: 0px">
+                <p style="text-align: justify; position: relative; left: -10px;">
+                  Concent to submit the data to Blockchain and commissioning.
+                </p>
+              </div>
+            </div>
+            <button class="btn btn-success" style="margin-bottom: 10px" (click)="publishData()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="showTable" style="padding-top: 10px">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <img class="card-img-top" src="../assets/car1.jpeg" alt="Your Car" />
+          <div class="card-body">
+            <h5 class="card-title">Details</h5>
+            <label>Vehicle Number: <i>MH01JB007</i></label><br>
+            <label>Chasis Number: <i>5GZCZ43D13S812715</i></label><br>
+            <label>Car Model: <i>BMW 320d</i></label><br><br>
+
+            <strong>RTA:</strong><br>
+            &nbsp;&nbsp;<label>Registration Date: 01/01/2005</label><br>
+            &nbsp;&nbsp;<label>Owner Name: Jaxxx Boxxx</label><br>
+            &nbsp;&nbsp;<label>Vehicle Type: Personal</label><br><br>
+
+            <strong>Insurance:</strong><br>
+            &nbsp;&nbsp;<label>Covered till: 12/30/2020</label><br><br>
+
+            <strong>Car Service:</strong><br>
+            &nbsp;&nbsp;<label>Location: Mumbai</label><br>
+            &nbsp;&nbsp;<label>Dealer: Navnit Motors</label><br>
+            &nbsp;&nbsp;<label>Description: Oil Change</label><br><br>
+
+            <div style="text-align: center">
+              <a href="#" class="btn btn-primary">Purchase options</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img class="card-img-top" src="../assets/car2.jpeg" alt="Your Car" />
+          <div class="card-body">
+            <h5 class="card-title">Details</h5>
+            <label>Vehicle Number: <i>MH01JB001</i></label><br>
+            <label>Chasis Number: <i>4GZCZ43ZX3S810010</i></label><br>
+            <label>Car Model: <i>BMW X5</i></label><br><br>
+
+            <strong>RTA:</strong><br>
+            &nbsp;&nbsp;<label>Registration Date: 10/05/2006</label><br>
+            &nbsp;&nbsp;<label>Owner Name: Sxxx Kxxx</label><br>
+            &nbsp;&nbsp;<label>Vehicle Type: Personal</label><br><br>
+
+            <strong>Insurance:</strong><br>
+            &nbsp;&nbsp;<label>Covered till: 05/28/2020</label><br><br>
+
+            <strong>Car Service:</strong><br>
+            &nbsp;&nbsp;<label>Location: Mumbai</label><br>
+            &nbsp;&nbsp;<label>Dealer: BMW Motors</label><br>
+            &nbsp;&nbsp;<label>Description: Tyre Change</label><br><br>
+
+            <div style="text-align: center">
+              <a href="#" class="btn btn-primary">Purchase options</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="card">
+      <div class="card-header">RTA Details</div>
+      <div class="card-block">
+        <table class="table table-dark" style="margin-bottom: 0">
+          <thead>
+            <tr>
+              <th scope="col">S. No.</th>
+              <th scope="col">Vehicle Number</th>
+              <th scope="col">Chasis Number</th>
+              <th scope="col">Owner Name</th>
+              <th scope="col">Vehicle Type</th>
+              <th scope="col">Vehicle Model</th>
+              <th scope="col">Registration Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of data; index as j;">
+              <td>{{j + 1}}</td>
+              <td>{{i.vehicleNumber}}</td>
+              <td>{{i.chasisNumber}}</td>
+              <td>{{i.ownerName}}</td>
+              <td>{{i.vehicleType}}</td>
+              <td>{{i.model}}</td>
+              <td>{{i.registrationDate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><br>
+    <div class="card">
+      <div class="card-header">Insurance Details</div>
+      <div class="card-block">
+        <table class="table table-dark" style="margin-bottom: 0">
+          <thead>
+            <tr>
+              <th scope="col">S. No.</th>
+              <th scope="col">Vehicle Number</th>
+              <th scope="col">Chasis Number</th>
+              <th scope="col">Is Inssured</th>
+              <th scope="col">Insurance Type</th>
+              <th scope="col">Insurance End Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of data; index as j;">
+              <td>{{j + 1}}</td>
+              <td>{{i.vehicleNumber}}</td>
+              <td>{{i.chasisNumber}}</td>
+              <td>{{i.isInssured}}</td>
+              <td>{{i.inssuranceType}}</td>
+              <td>{{i.inssuranceEndDate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><br>
+    <div class="card">
+      <div class="card-header">Car Service Details</div>
+      <div class="card-block">
+        <table class="table table-dark" style="margin-bottom: 0">
+          <thead>
+            <tr>
+              <th scope="col">S. No.</th>
+              <th scope="col">Vehicle Number</th>
+              <th scope="col">Chasis Number</th>
+              <th scope="col">Service Location</th>
+              <th scope="col">Dealer Name</th>
+              <th scope="col">Service Description</th>
+              <th scope="col">Service Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of data; index as j;">
+              <td>{{j + 1}}</td>
+              <td>{{i.vehicleNumber}}</td>
+              <td>{{i.chasisNumber}}</td>
+              <td>{{i.serviceLocation}}</td>
+              <td>{{i.dealerName}}</td>
+              <td>{{i.serviceDescription}}</td>
+              <td>{{i.serviceDate}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> -->
+  </div>
+
+  <br>
+  <div align="center" *ngIf="showDashboard">
+    <div class="col-md-4" style="padding-left: 0px;">
+      <div class="card">
+        <div class="card-block" pull-left>
+          <h4><span class="badge badge-secondary">Upload File:</span></h4>
+          <input class="form-control" type="file">
+        </div>
+      </div><br>
+      <h5><a href="#" class="badge badge-primary">view uploaded file</a></h5>
+    </div>
+  </div>
+</div>
